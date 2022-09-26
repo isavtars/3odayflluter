@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/route.dart';
+
 class Loginform extends StatelessWidget {
   const Loginform({super.key});
 
@@ -9,7 +11,9 @@ class Loginform extends StatelessWidget {
     //return Material
     return Material(
         color: Colors.white,
-        child: Column(
+        //its make scrooling views
+        child: SingleChildScrollView(
+            child: Column(
           children: [
             Image.asset(
               "assets/images/bpn.png",
@@ -19,7 +23,7 @@ class Loginform extends StatelessWidget {
               height: 20.0,
             ),
             Text("welcome ",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
             SizedBox(
               height: 20.0,
             ),
@@ -43,14 +47,15 @@ class Loginform extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
-                  print("here you write function to implemet logic");
+                  // debugPrint("here you write function to implemet logic");
+                  Navigator.pushNamed(context, MyRoute.homeRoute);
                 },
-                style: TextButton.styleFrom(),
+                style: TextButton.styleFrom(minimumSize: Size(120, 50)),
                 child: Text("login"))
           ],
-        ));
+        )));
   }
 }

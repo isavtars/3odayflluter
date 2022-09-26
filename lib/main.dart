@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluuterprojects/screens/home_screens.dart';
 import 'package:fluuterprojects/screens/loggins_reen.dart';
+import 'package:fluuterprojects/utils/route.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -11,15 +12,17 @@ void main() {
     // home: Myapp(), not mentions double routes
     themeMode: ThemeMode.light,
     theme: ThemeData(
-      primarySwatch: Colors.green, 
+      primarySwatch: Colors.green,
       // primaryTextTheme: GoogleFonts.latoTextTheme(),
       fontFamily: GoogleFonts.lato().fontFamily,
     ),
     darkTheme: ThemeData(primarySwatch: Colors.yellow),
-    initialRoute: "/login",
+    initialRoute: MyRoute.loginRoute,
     routes: {
-      "/": (context) => const Myapp(),
-      "/login": (context) => const Loginform(),
+      //wehave mandatori to pass "/"
+      "/": (context) => Loginform(),
+      MyRoute.homeRoute: (context) => Myapp(),
+      MyRoute.loginRoute: (context) => Loginform(),
     },
   ));
 }
