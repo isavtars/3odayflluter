@@ -34,9 +34,8 @@ class _LoginformState extends State<Loginform> {
         //implemnt dart as logic not js
         changeButton = false;
       });
+      _formKey.currentState!.reset();
     }
-
-    return _formKey.currentState!.reset();
   }
 
   @override
@@ -92,8 +91,8 @@ class _LoginformState extends State<Loginform> {
                         },
                         decoration: const InputDecoration(
                             icon: Icon(Icons.email),
-                            hintText: "EnteruserName",
-                            labelText: "UserName"),
+                            hintText: "Enter email",
+                            labelText: "Email"),
                       ),
                       SizedBox(
                         height: 4,
@@ -142,6 +141,7 @@ class _LoginformState extends State<Loginform> {
                       ? Icons.password_rounded
                       : Icons.show_chart)),
               //hadle click event from noclick widgetsw
+
               Material(
                 color: !changeButton ? Colors.purple : Colors.red,
                 borderRadius: BorderRadius.circular(changeButton ? 300 : 10),

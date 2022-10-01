@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluuterprojects/screens/setting_screen.dart';
 
+import '../widgets/drawer.dart';
+
 class Myapp extends StatelessWidget {
   const Myapp({super.key});
 
@@ -9,7 +11,7 @@ class Myapp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("flutter day 2"),
+        title: const Text("flluterApp"),
         actions: [
           GestureDetector(
               onTap: () {
@@ -27,20 +29,14 @@ class Myapp extends StatelessWidget {
           Text("this is text"),
           Container(
               padding: EdgeInsets.all(20.2),
-              child: Text("this is cointenerxxxx"),
+              child: Text("this is cointener"),
               decoration: BoxDecoration(
                 color: Colors.red,
                 shape: BoxShape.circle,
               ))
         ],
       ),
-      drawer: Drawer(
-          child: Column(
-        children: [
-          SizedBox(height: 50),
-          Text("this is from drawersrrr"),
-        ],
-      )),
+      drawer: MyDrawer(),
     );
   }
 }
