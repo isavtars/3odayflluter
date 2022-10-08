@@ -34,15 +34,18 @@ class MyDrawer extends StatelessWidget {
             ListTile(
                 leading: Icon(Icons.home, color: Colors.white),
                 title: Text("Home",
-                    style: TextStyle(color: Colors.white, fontSize: 20))),
+                    style: TextStyle(color: Colors.white, fontSize: 18))),
             ListTile(
                 leading: Icon(Icons.account_circle, color: Colors.white),
                 title: Text("Accounts",
-                    style: TextStyle(color: Colors.white, fontSize: 20))),
+                    style: TextStyle(color: Colors.white, fontSize: 18))),
             ListTile(
                 leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("email me",
-                    style: TextStyle(color: Colors.white, fontSize: 20)))
+                title: Text("Email me",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    )))
           ],
         ),
       ),

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:fluuterprojects/screens/setting_screen.dart';
 
+import '../models/catalog.dart';
 import '../widgets/drawer.dart';
+import '../widgets/itemwidets.dart';
 
 class Myapp extends StatelessWidget {
   const Myapp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(55, (index) => CatalogModel.items[2]);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -20,23 +24,18 @@ class Myapp extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (((context) => SettingScreen()))));
               },
-              child: Icon(Icons.settings))
+              child: const Icon(Icons.settings))
         ],
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 2),
-          Text("this is text"),
-          Container(
-              padding: EdgeInsets.all(20.2),
-              child: Text("this is cointener"),
-              decoration: BoxDecoration(
-                color: Colors.red,
-                shape: BoxShape.circle,
-              ))
-        ],
+      body: ListView.builder(
+        itemCount: dummyList.length,
+        itemBuilder: (context, index) {
+          return ItemWidget(
+            item: dummyList[index],
+          );
+        },
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
